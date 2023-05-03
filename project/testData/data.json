@@ -1,0 +1,11 @@
+{
+  "users": {
+    "username": "tomsmith",
+    "password": "SuperSecretPassword!"
+  },
+
+  "statusText": {
+    "success": "You logged into a secure area!",
+    "invalid_username": "Your username is invalid!"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "waits": {
+    "timeout": 2000,
+    "reverse": false,
+    "timeoutMessage": "Timeout has ended",
+    "interval": 250
+  }
+}
