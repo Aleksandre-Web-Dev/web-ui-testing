@@ -7,7 +7,7 @@ export const config = {
     {
       browserName: "chrome",
       "goog:chromeOptions": {
-        args: ["--incognito"],
+        args: ["--incognito", "headless", "disable-gpu"],
       },
     },
   ],

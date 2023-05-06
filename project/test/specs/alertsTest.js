@@ -37,7 +37,7 @@ describe("Testing Alerts", async () => {
     );
     await DriverUtils.acceptAlert();
     assert.equal(
-      await AlertsPage.getResultText(),
+      await AlertsPage.getResultText(), 
       testData.alerts.confirm.result.accepted,
       "Confirm Alert has not been accepted"
     );
