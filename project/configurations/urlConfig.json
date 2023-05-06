@@ -1,7 +1,9 @@
 {
   "urls": {
+    "base_url": "http://the-internet.herokuapp.com/",
     "login": "login",
     "secure_area": "secure",
-    "alerts_page": "javascript_alerts"
+    "alerts_page": "javascript_alerts",
+    "broken_images" : "broken_images"
   }
 }

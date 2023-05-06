@@ -17,10 +17,30 @@ class BaseElement {
     return $$(this.selector);
   }
 
+  async getElementList() {
+    logger.info(`getElementList method has been called on ${this.elementName}`);
+    const list = (await this.findElements()).map((elem, index) => {
+      return new this.constructor(
+        elem,
+        `Element name : ${elem}, Index : ${index}`
+      );
+    });
+    return list;
+  }
+
   async click() {
     logger.info(`Click method has been called on ${this.elementName}`);
     const elem = await this.findElement();
     return elem.click();
+  }
+
+  async getElementAttribute(attributeName) {
+    const elem = await this.findElement();
+    logger.info(
+      `getElementAttribute Method has been called on ${this.elementName}`
+    );
+    const attrValue = elem.getAttribute(attributeName);
+    return attrValue;
   }
 
   async isDisplayed(

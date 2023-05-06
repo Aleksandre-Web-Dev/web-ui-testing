@@ -30,5 +30,12 @@
         "entered": "You entered: "
       }
     }
+  },
+  "broken_images": {
+    "attribute": "src",
+    "status_codes": {
+      "success": "200",
+      "error": "400"
+    }
   }
 }

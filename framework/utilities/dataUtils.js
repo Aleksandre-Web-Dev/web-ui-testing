@@ -1,7 +1,6 @@
 import StringUtils from "./stringUtils.js";
 import utilConfig from "../../project/configurations/utilConfig.json" assert { type: "json" };
-import logger from "../utilities/logger.js"
-
+import logger from "../utilities/logger.js";
 
 class DataUtils {
   static generateTestData(dataLength = utilConfig.default.data.length.data) {
