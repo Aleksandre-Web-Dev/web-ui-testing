@@ -6,5 +6,29 @@
   "status_text": {
     "success": "You logged into a secure area!",
     "invalid_username": "Your username is invalid!"
+  },
+  "alerts": {
+    "alert": {
+      "text": "I am a JS Alert",
+      "type": "Alert",
+      "result": "You successfully clicked an alert"
+    },
+    "confirm": {
+      "text": "I am a JS Confirm",
+      "type": "Confirm",
+      "result": {
+        "canceled": "You clicked: Cancel",
+        "accepted": "You clicked: Ok"
+      }
+    },
+    "prompt": {
+      "text": "I am a JS prompt",
+      "type": "Prompt",
+      "input": "Hello world",
+      "result": {
+        "canceled": "You entered: null",
+        "entered": "You entered: "
+      }
+    }
   }
 }

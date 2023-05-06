@@ -1,6 +1,6 @@
+import { createLogger, format, transports } from "winston";
 import fileConfig from "../../project/configurations/fileConfig.json" assert { type: "json" };
 import utilConfig from "../../project/configurations/utilConfig.json" assert { type: "json" };
-import { createLogger, format, transports } from "winston";
 const { combine, timestamp, printf } = format;
 
 const myFormat = printf(({ level, message, timestamp }) => {

@@ -1,3 +1,4 @@
+import { assert } from "chai";
 import LoginPage from "../pageObjects/loginPage.js";
 import SecurePage from "../pageObjects/securePage.js";
 import DriverUtils from "../../../framework/utilities/driverUtils.js";
@@ -7,7 +8,6 @@ import testData from "../../testData/combined.json" assert { type: "json" };
 import urlConfig from "../../configurations/urlConfig.json" assert { type: "json" };
 import utilConfig from "../../configurations/utilConfig.json" assert { type: "json" };
 import logger from "../../../framework/utilities/logger.js";
-import { assert } from "chai";
 
 describe("Login test", async () => {
   before("Generate test data", function () {
@@ -33,7 +33,6 @@ describe("Login test", async () => {
       await LoginPage.clickOnSubmitButton();
       const validationStatusText = await StringUtils.sliceString(
         await LoginPage.getNotificationText(),
-        null,
         testData.status_text.invalid_username.length
       );
       assert.equal(
@@ -51,7 +50,7 @@ describe("Login test", async () => {
     await LoginPage.clickOnSubmitButton();
     const validationStatusText = await StringUtils.sliceString(
       await LoginPage.getNotificationText(),
-      null,
+
       testData.status_text.success.length
     );
     assert.equal(

@@ -6,8 +6,8 @@ class StringUtils {
   constructor() {}
   static async sliceString(
     str,
-    startIndex = utilConfig.default.string.start_index,
-    endIndex
+    endIndex,
+    startIndex = utilConfig.default.string.start_index
   ) {
     logger.info(
       `Slicing ${str} - Starting Index ${startIndex} - Ending Index ${endIndex}`

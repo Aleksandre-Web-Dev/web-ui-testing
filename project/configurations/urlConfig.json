@@ -1,6 +1,7 @@
 {
   "urls": {
     "login": "login",
-    "secure_area": "secure"
+    "secure_area": "secure",
+    "alerts_page": "javascript_alerts"
   }
 }
