@@ -6,35 +6,27 @@ import BaseForm from "../../../framework/baseForm.js";
 class LoginPage extends BaseForm {
   constructor() {
     super(
-      new TextElement("//h2[contains(text(),'Login')]"),
-      "Login Page Heading"
+      new ButtonElement("//button[@type='submit']", "Submit button"),
+      "Login Page"
     );
-    this.usernameInputField = new InputElement(
-      "//input[@id='username']",
-      "Username Input Field"
-    );
-    this.passwordInputField = new InputElement(
-      "//input[@id='password']",
-      "Password Input Field"
-    );
+    this.InputField = (fieldId) => {
+      return new InputElement(
+        `//input[@id='${fieldId}']`,
+        `${fieldId} input field`
+      );
+    };
     this.submitButton = new ButtonElement(
       "//button[@type='submit']",
-      "Submit Button"
+      "Submit button"
     );
-
     this.loginNotificationText = new TextElement(
       "//div[contains(@class,'flash')]",
-      "Login Status Notification Text"
+      "Login status notification text"
     );
-
   }
 
-  async enterUsername(username) {
-    return this.usernameInputField.enterText(username);
-  }
-
-  async enterPassword(password) {
-    return this.passwordInputField.enterText(password);
+  async enterUserCredential(fieldName, credential) {
+    return this.InputField(fieldName).enterText(credential);
   }
 
   async clickOnSubmitButton() {

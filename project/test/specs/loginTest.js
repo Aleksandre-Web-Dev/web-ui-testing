@@ -1,45 +1,68 @@
 import LoginPage from "../pageObjects/loginPage.js";
+import SecurePage from "../pageObjects/securePage.js";
 import DriverUtils from "../../../framework/utilities/driverUtils.js";
+import DataUtils from "../../../framework/utilities/dataUtils.js";
 import StringUtils from "../../../framework/utilities/stringUtils.js";
-import RandomUtils from "../../../framework/utilities/randomUtils.js";
-import testData from "../../testData/data.json" assert { type: "json" };
+import testData from "../../testData/combined.json" assert { type: "json" };
 import urlConfig from "../../configurations/urlConfig.json" assert { type: "json" };
+import utilConfig from "../../configurations/utilConfig.json" assert { type: "json" };
+import logger from "../../../framework/utilities/logger.js";
 import { assert } from "chai";
 
 describe("User Login Test", async () => {
-  beforeEach("navigate to Login Page", async () => {
-    await DriverUtils.navigateTo(urlConfig.urls.login);
+  before("Generate Test Data", function () {
+    this.userTestData = DataUtils.generateTestData();
   });
 
-  it("should verify login functionality with valid username and password", async () => {
-    await LoginPage.enterUsername(testData.users.username);
-    await LoginPage.enterPassword(testData.users.password);
+  beforeEach("navigate to Login Page", async () => {
+    await DriverUtils.navigateTo(urlConfig.urls.login);
+    assert.isTrue(await LoginPage.isPageDisplayed(), "Login Page did not open");
+  });
+
+  const arrLoop = new Array(utilConfig.default.data.length.data).fill();
+  arrLoop.forEach((element, index) => {
+    it("should verify login functionality with invalid username and password", async function () {
+      for (const [fieldName, credential] of Object.entries(
+        this.userTestData[index]
+      )) {
+        await LoginPage.enterUserCredential(fieldName, credential);
+        logger.info(
+          `Checking user account ID#${index}, Field Name: ${fieldName}, Credentials: ${credential}`
+        );
+      }
+      await LoginPage.clickOnSubmitButton();
+      const validationStatusText = await StringUtils.sliceString(
+        await LoginPage.getNotificationText(),
+        null,
+        testData.status_text.invalid_username.length
+      );
+      assert.equal(
+        testData.status_text.invalid_username,
+        validationStatusText,
+        "User Login was successfull"
+      );
+    });
+  });
+
+  it("should verify login functionality with valid username and password", async function () {
+    for (let [fieldName, credentials] of Object.entries(testData.validUser)) {
+      await LoginPage.enterUserCredential(fieldName, credentials);
+    }
     await LoginPage.clickOnSubmitButton();
-    const validationStatusText = StringUtils.sliceString(
+    const validationStatusText = await StringUtils.sliceString(
       await LoginPage.getNotificationText(),
       null,
-      testData.statusText.success.length
+      testData.status_text.success.length
     );
     assert.equal(
-      testData.statusText.success,
+      testData.status_text.success,
       validationStatusText,
       "User Login was unsuccesful"
     );
   });
 
-  it("should verify login functionality with invalid username and password", async () => {
-    await LoginPage.enterUsername(RandomUtils.generateRandomString());
-    await LoginPage.enterPassword(RandomUtils.generateRandomString());
-    await LoginPage.clickOnSubmitButton();
-    const validationStatusText = StringUtils.sliceString(
-      await LoginPage.getNotificationText(),
-      null,
-      testData.statusText.invalid_username.length
-    );
-    assert.equal(
-      testData.statusText.invalid_username,
-      validationStatusText,
-      "User Login was successful"
-    );
+  after("Logout User", async () => {
+    await SecurePage.clickOnLogoutButton();
+    assert.isTrue(await LoginPage.isPageDisplayed(), "Login Page did not open");
   });
 });

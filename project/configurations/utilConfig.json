@@ -1,0 +1,22 @@
+{
+  "default": {
+    "number": {
+      "max": 10
+    },
+    "string": {
+      "length": 8,
+      "start_index": 0,
+      "charset": "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    },
+    "data": {
+      "length": {
+        "data": 10,
+        "username": 26,
+        "password": 16
+      }
+    },
+    "logger": {
+      "format": "HH:mm:ss"
+    }
+  }
+}

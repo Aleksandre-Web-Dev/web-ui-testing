@@ -1,8 +1,10 @@
 {
   "waits": {
-    "timeout": 2000,
-    "reverse": false,
-    "timeoutMessage": "Timeout has ended",
-    "interval": 250
+    "default": {
+      "timeout": 2000,
+      "reverse": false,
+      "timeout_message": "Timeout has ended",
+      "interval": 250
+    }
   }
 }

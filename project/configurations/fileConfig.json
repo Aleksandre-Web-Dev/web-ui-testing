@@ -1,0 +1,9 @@
+{
+  "paths": {
+    "logs": "logs/combined.log",
+    "test_data": "project/testData/"
+  },
+  "names": {
+    "users_data": "users.json"
+  }
+}

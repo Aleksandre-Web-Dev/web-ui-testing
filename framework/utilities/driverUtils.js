@@ -1,27 +1,8 @@
-import browserConfig from "../../project/configurations/browserConfig.json" assert { type: "json" };
-
+import logger from "../utilities/logger.js";
 class DriverUtils {
   static async navigateTo(url) {
+    logger.info(`navigateTo method has been called - url : ${url}`);
     await browser.url(url);
-  }
-
-  static async getLocalStorageItem(itemName) {
-    const item = await browser.execute((itemName) => {
-      return localStorage.getItem(itemName);
-    }, itemName);
-    return item;
-  }
-
-  static async sendKeys(keys) {
-    await browser.keys(keys);
-  }
-
-  static async pause(timeout = browserConfig.waits.timeout) {
-    await browser.pause(timeout);
-  }
-
-  static async getCurrentUrl() {
-    return browser.getUrl();
   }
 }
 export default DriverUtils;

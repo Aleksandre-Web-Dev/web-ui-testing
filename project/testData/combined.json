@@ -1,10 +1,10 @@
 {
-  "users": {
+  "validUser": {
     "username": "tomsmith",
     "password": "SuperSecretPassword!"
   },
 
-  "statusText": {
+  "status_text": {
     "success": "You logged into a secure area!",
     "invalid_username": "Your username is invalid!"
   }

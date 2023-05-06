@@ -1,6 +1,6 @@
 {
   "urls": {
     "login": "login",
-    "secureArea": "secure"
+    "secure_area": "secure"
   }
 }
