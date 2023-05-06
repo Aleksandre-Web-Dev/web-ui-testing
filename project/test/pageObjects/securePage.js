@@ -20,5 +20,4 @@ class SecurePage extends BaseForm {
     return this.logoutButton.click();
   }
 }
-
 export default new SecurePage();

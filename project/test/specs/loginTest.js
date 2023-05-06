@@ -9,12 +9,12 @@ import utilConfig from "../../configurations/utilConfig.json" assert { type: "js
 import logger from "../../../framework/utilities/logger.js";
 import { assert } from "chai";
 
-describe("User Login Test", async () => {
-  before("Generate Test Data", function () {
+describe("Login test", async () => {
+  before("Generate test data", function () {
     this.userTestData = DataUtils.generateTestData();
   });
 
-  beforeEach("navigate to Login Page", async () => {
+  beforeEach("Navigate to Login page", async () => {
     await DriverUtils.navigateTo(urlConfig.urls.login);
     assert.isTrue(await LoginPage.isPageDisplayed(), "Login Page did not open");
   });
@@ -61,7 +61,7 @@ describe("User Login Test", async () => {
     );
   });
 
-  after("Logout User", async () => {
+  after("Logout user", async () => {
     await SecurePage.clickOnLogoutButton();
     assert.isTrue(await LoginPage.isPageDisplayed(), "Login Page did not open");
   });

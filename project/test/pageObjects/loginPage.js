@@ -37,5 +37,4 @@ class LoginPage extends BaseForm {
     return this.loginNotificationText.getText();
   }
 }
-
 export default new LoginPage();
