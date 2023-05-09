@@ -37,5 +37,8 @@
       "success": "200",
       "error": "400"
     }
+  },
+  "slider": {
+    "attributes": ["max", "min", "step"]
   }
 }

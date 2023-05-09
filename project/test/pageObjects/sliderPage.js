@@ -26,6 +26,14 @@ class SliderPage extends BaseForm {
   async getSliderValueText() {
     return this.sliderValueText.getText();
   }
+
+  async getSliderAttribute(attributeName) {
+    return this.slider.getElementAttribute(attributeName);
+  }
+
+  async setFocusOnSlider() {
+    return this.slider.moveTo();
+  }
 }
 
 export default new SliderPage();

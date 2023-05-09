@@ -21,7 +21,13 @@ class DriverUtils {
   }
 
   static async sendAlertText(text) {
+    logger.info(`sendAlertText method has been called - Alert text ${text}`);
     return browser.sendAlertText(text);
+  }
+
+  static async sendKeys(keys) {
+    logger.info(`sendKeys method has been called - Keys ${keys}`);
+    return browser.keys(keys);
   }
 }
 export default DriverUtils;

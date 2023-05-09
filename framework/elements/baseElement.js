@@ -34,6 +34,14 @@ class BaseElement {
     return elem.click();
   }
 
+  async moveTo(x, y) {
+    logger.info(
+      `moveTo method has been called on coordinates - x: ${x} y: ${y}`
+    );
+    const elem = await this.findElement();
+    return elem.moveTo({ x, y });
+  }
+
   async getElementAttribute(attributeName) {
     const elem = await this.findElement();
     logger.info(
