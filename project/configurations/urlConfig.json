@@ -4,6 +4,7 @@
     "login": "login",
     "secure_area": "secure",
     "alerts_page": "javascript_alerts",
-    "broken_images" : "broken_images"
+    "broken_images": "broken_images",
+    "slider": "horizontal_slider"
   }
 }

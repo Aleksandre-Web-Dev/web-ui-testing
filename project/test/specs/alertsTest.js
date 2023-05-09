@@ -1,6 +1,6 @@
 import { assert } from "chai";
-import AlertsPage from "../pageObjects/alertPage.js";
 import DriverUtils from "../../../framework/utilities/driverUtils.js";
+import AlertsPage from "../pageObjects/alertPage.js";
 import urlConfig from "../../configurations/urlConfig.json" assert { type: "json" };
 import testData from "../../testData/combined.json" assert { type: "json" };
 
@@ -37,7 +37,7 @@ describe("Testing Alerts", async () => {
     );
     await DriverUtils.acceptAlert();
     assert.equal(
-      await AlertsPage.getResultText(), 
+      await AlertsPage.getResultText(),
       testData.alerts.confirm.result.accepted,
       "Confirm Alert has not been accepted"
     );

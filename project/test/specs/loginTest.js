@@ -1,13 +1,13 @@
 import { assert } from "chai";
-import LoginPage from "../pageObjects/loginPage.js";
-import SecurePage from "../pageObjects/securePage.js";
 import DriverUtils from "../../../framework/utilities/driverUtils.js";
 import DataUtils from "../../../framework/utilities/dataUtils.js";
 import StringUtils from "../../../framework/utilities/stringUtils.js";
+import logger from "../../../framework/utilities/logger.js";
+import LoginPage from "../pageObjects/loginPage.js";
+import SecurePage from "../pageObjects/securePage.js";
 import testData from "../../testData/combined.json" assert { type: "json" };
 import urlConfig from "../../configurations/urlConfig.json" assert { type: "json" };
 import utilConfig from "../../configurations/utilConfig.json" assert { type: "json" };
-import logger from "../../../framework/utilities/logger.js";
 
 describe("Login test", async () => {
   before("Generate test data", function () {
