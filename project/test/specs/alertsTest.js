@@ -1,12 +1,12 @@
 import { assert } from "chai";
 import DriverUtils from "../../../framework/utilities/driverUtils.js";
-import AlertsPage from "../pageObjects/alertPage.js";
 import urlConfig from "../../configurations/urlConfig.json" assert { type: "json" };
 import testData from "../../testData/combined.json" assert { type: "json" };
+import AlertsPage from "../pageObjects/alertPage.js";
 
 describe("Testing Alerts", async () => {
   before("Navigate to alerts page", async () => {
-    await DriverUtils.navigateTo(urlConfig.urls.alerts_page);
+    await DriverUtils.navigateTo(urlConfig.urls.pages.alerts);
     assert.isTrue(
       await AlertsPage.isPageDisplayed(),
       "Alerts Page did not open"

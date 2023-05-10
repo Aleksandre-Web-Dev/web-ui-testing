@@ -1,12 +1,12 @@
 import { assert } from "chai";
 import DriverUtils from "../../../framework/utilities/driverUtils.js";
-import BrokenImagesPage from "../pageObjects/brokenImagesPage.js";
-import ApiUtils from "../utilities/apiUtils.js";
 import urlConfig from "../../configurations/urlConfig.json" assert { type: "json" };
 import testData from "../../testData/combined.json" assert { type: "json" };
+import ApiUtils from "../utilities/apiUtils.js";
+import BrokenImagesPage from "../pageObjects/brokenImagesPage.js";
 describe("Testing For Broken Links", async () => {
   before("Navigate to Broken images Page", async () => {
-    await DriverUtils.navigateTo(urlConfig.urls.broken_images);
+    await DriverUtils.navigateTo(urlConfig.urls.pages.broken_images);
   });
 
   it("Verify Functionality of image links", async () => {

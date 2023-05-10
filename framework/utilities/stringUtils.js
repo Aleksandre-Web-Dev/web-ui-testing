@@ -1,9 +1,10 @@
-import logger from "../utilities/logger.js"
+import logger from "../utilities/logger.js";
 import utilConfig from "../../project/configurations/utilConfig.json" assert { type: "json" };
 import NumberUtils from "./numberUtils.js";
 
 class StringUtils {
   constructor() {}
+  
   static async sliceString(
     str,
     endIndex,
@@ -26,6 +27,10 @@ class StringUtils {
     }
     logger.info(`Random String Generated ${result} of length ${length}`);
     return result;
+  }
+
+  static async extractNumberFromString(str) {
+    return Number(str.replace(/\D/g, ""));
   }
 }
 

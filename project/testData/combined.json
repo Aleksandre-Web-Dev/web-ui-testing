@@ -39,6 +39,13 @@
     }
   },
   "slider": {
-    "attributes": ["max", "min", "step"]
+    "attributes": ["max", "min", "step"],
+    "operations": {
+      "increase": "Right arrow",
+      "decrease": "Left arrow"
+    }
+  },
+  "dropdown": {
+    "selected": "selected"
   }
 }

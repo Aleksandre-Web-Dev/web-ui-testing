@@ -3,11 +3,11 @@ import DriverUtils from "../../../framework/utilities/driverUtils.js";
 import DataUtils from "../../../framework/utilities/dataUtils.js";
 import StringUtils from "../../../framework/utilities/stringUtils.js";
 import logger from "../../../framework/utilities/logger.js";
-import LoginPage from "../pageObjects/loginPage.js";
-import SecurePage from "../pageObjects/securePage.js";
 import testData from "../../testData/combined.json" assert { type: "json" };
 import urlConfig from "../../configurations/urlConfig.json" assert { type: "json" };
 import utilConfig from "../../configurations/utilConfig.json" assert { type: "json" };
+import LoginPage from "../pageObjects/loginPage.js";
+import SecurePage from "../pageObjects/securePage.js";
 
 describe("Login test", async () => {
   before("Generate test data", function () {
@@ -15,7 +15,7 @@ describe("Login test", async () => {
   });
 
   beforeEach("Navigate to Login page", async () => {
-    await DriverUtils.navigateTo(urlConfig.urls.login);
+    await DriverUtils.navigateTo(urlConfig.urls.pages.login);
     assert.isTrue(await LoginPage.isPageDisplayed(), "Login Page did not open");
   });
 

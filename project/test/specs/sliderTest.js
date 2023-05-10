@@ -1,12 +1,12 @@
 import { assert } from "chai";
 import DriverUtils from "../../../framework/utilities/driverUtils.js";
 import NumberUtils from "../../../framework/utilities/numberUtils.js";
-import SliderPage from "../pageObjects/sliderPage.js";
 import urlConfig from "../../configurations/urlConfig.json" assert { type: "json" };
 import testdata from "../../testData/combined.json" assert { type: "json" };
+import SliderPage from "../pageObjects/sliderPage.js";
 describe("Testing horizontal Slider", async () => {
   before("Navigate to Slider page", async function () {
-    await DriverUtils.navigateTo(urlConfig.urls.slider);
+    await DriverUtils.navigateTo(urlConfig.urls.pages.slider);
     assert.isTrue(
       await SliderPage.isPageDisplayed(),
       "Slider page is not displayed"
@@ -34,13 +34,13 @@ describe("Testing horizontal Slider", async () => {
     }
     await SliderPage.setFocusOnSlider();
     const sliderValue = Number(await SliderPage.getSliderValueText());
-    await DriverUtils.sendKeys("Right arrow");
+    await DriverUtils.sendKeys(testdata.slider.operations.increase);
     assert.equal(
       await SliderPage.getSliderValueText(),
       sliderValue + sliderAttributes.step,
       "Slider Value did not increase"
     );
-    await DriverUtils.sendKeys("Left arrow");
+    await DriverUtils.sendKeys(testdata.slider.operations.decrease);
     assert.equal(
       await SliderPage.getSliderValueText(),
       sliderValue,
