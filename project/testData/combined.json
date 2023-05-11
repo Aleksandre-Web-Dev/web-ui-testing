@@ -44,8 +44,5 @@
       "increase": "Right arrow",
       "decrease": "Left arrow"
     }
-  },
-  "dropdown": {
-    "selected": "selected"
   }
 }

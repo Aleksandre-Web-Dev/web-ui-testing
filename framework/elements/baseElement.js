@@ -42,6 +42,13 @@ class BaseElement {
     return elem.moveTo({ x, y });
   }
 
+  async isSelected() {
+    logger.info(`isSelected Method has been called on ${this.elementName}`);
+
+    const elem = await this.findElement();
+    return elem.isSelected();
+  }
+
   async getElementAttribute(attributeName) {
     const elem = await this.findElement();
     logger.info(

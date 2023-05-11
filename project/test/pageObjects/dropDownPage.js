@@ -36,6 +36,11 @@ class DropDownPage extends BaseForm {
     const elem = list[index];
     return elem.click();
   }
+
+  async isOptionSelected(list, index) {
+    const elem = list[index];
+    return elem.isSelected();
+  }
 }
 
 export default new DropDownPage();

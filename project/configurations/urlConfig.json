@@ -7,7 +7,8 @@
       "alerts": "javascript_alerts",
       "broken_images": "broken_images",
       "slider": "horizontal_slider",
-      "dropdown": "dropdown"
+      "dropdown": "dropdown",
+      "checkboxes": "checkboxes"
     }
   }
 }
