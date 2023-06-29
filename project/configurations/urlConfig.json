@@ -8,7 +8,8 @@
       "broken_images": "broken_images",
       "slider": "horizontal_slider",
       "dropdown": "dropdown",
-      "checkboxes": "checkboxes"
+      "checkboxes": "checkboxes",
+      "add_remove_elements": "add_remove_elements/"
     }
   }
 }
